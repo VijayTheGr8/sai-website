@@ -35,13 +35,22 @@ const SignUpCard = () => {
       return;
     }
     setLoading(true);
-    const { error } = await supabase.auth.signUp({
+    const { error: signUpError, data: signUpData } = await supabase.auth.signUp({
       email,
       password,
     });
+    if (signUpError) {
+      setLoading(false);
+      setError(signUpError.message);
+      return;
+    }
+    // Create profile row with email and empty responses
+    const { error: profileError } = await supabase
+      .from('profiles')
+      .insert([{ email, responses: {} }]);
     setLoading(false);
-    if (error) {
-      setError(error.message);
+    if (profileError) {
+      setError("Account created, but failed to initialize profile: " + profileError.message);
     } else {
       setSuccess("Account created! Please check your email to confirm.");
       // Optionally redirect or update app state
