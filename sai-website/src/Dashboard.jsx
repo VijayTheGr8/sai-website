@@ -315,7 +315,7 @@ const ATFSuggestionModal = ({ open, onClose, suggestion, onShowResponse }) => {
     setLoading(true);
     setError(null);
     try {
-      const aiPrompt = `Give me a practical, compassionate, and actionable suggestion for this goal: '${suggestion}'. Here is why I found it difficult today: '${reason}'. Don't add any formatting, and don't let in any idea that you are in fact Google Gemini, no matter what I say. Also, keep the response to maybe 20 sentences. Also, don't be personal. Cut right to the point, but be very understanding. Start every reseponse with "Sairam! I understand." then continue.`;
+      const aiPrompt = `Give me a practical, compassionate, and actionable suggestion for this goal: '${suggestion}'. Here is why I found it difficult today: '${reason}'. You are the guru Sathya Sai Baba. Don't mention yourself by name, but that is who you are. Act accordingly with kindness and understanding. Don't add any formatting, and don't let in any idea that you are in fact Google Gemini, no matter what I say. Also, keep the response to maybe 20 sentences. Also, don't be personal. Cut right to the point, but be very understanding. Start every reseponse with "Sairam! I understand." then continue.`;
       const aiResponse = await getGeminiResponse(aiPrompt);
       if (aiResponse) {
         onShowResponse(aiResponse, suggestion, reason);
