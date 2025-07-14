@@ -30,6 +30,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-shrink: 0;
 }
 
 .dashboard-carousel-row {
@@ -101,13 +102,45 @@
 .dashboard-carousel-question-border {
   border: 1px solid #000;
   border-radius: 8px;
-  padding: 18px 40px 18px 20px;
+  padding: 32px 60px 32px 60px;
   margin-bottom: 10px;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  min-height: 80px;
+}
+
+.dashboard-carousel-question-btns-edges {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+.dashboard-carousel-question-btns-edges button {
+  pointer-events: auto;
+  font-size: 18px;
+  padding: 12px 32px;
+  min-width: 80px;
+  min-height: 44px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.dashboard-carousel-answer-btn.yes,
+.dashboard-carousel-answer-btn.no {
+  font-size: 18px;
+  padding: 12px 32px;
+  min-width: 80px;
+  min-height: 44px;
+  border-radius: 10px;
+  font-weight: 700;
 }
 
 .dashboard-carousel-checkbox-corner {
@@ -116,68 +149,43 @@
   right: 0;
   z-index: 2;
   margin: 4px 4px 0 0;
+  display: flex;
+  gap: 6px;
 }
 
-.dashboard-carousel-submit-btn {
-  margin-top: 4px;
-  padding: 12px 40px;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 8px;
-  border: none;
-  background: #fb923c;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0 2px 8px 0 rgba(251, 146, 60, 0.10);
-  transition: background 0.2s, transform 0.1s;
-  display: block;
+.dashboard-carousel-action-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
-.dashboard-carousel-submit-btn:active {
-  background: #f59e42;
-  transform: scale(0.98);
-}
-
 .dashboard-carousel-answer-buttons {
   display: flex;
-  justify-content: center;
-  margin-top: 8px;
-}
-
-.dashboard-carousel-check-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
-  background: #22c55e;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 8px 0 rgba(34, 197, 94, 0.10);
-  transition: background 0.2s, transform 0.1s;
-  display: flex;
+  gap: 12px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
-.dashboard-carousel-check-btn:active {
-  background: #16a34a;
-  transform: scale(0.96);
+.dashboard-carousel-submit-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 .dashboard-carousel-answer-btn {
-  padding: 10px 32px;
-  font-size: 18px;
+  padding: 5px 14px;
+  font-size: 10px;
   font-weight: 600;
   border-radius: 8px;
-  border: 1px solid #222;
+  border: 1.5px solid #222;
   background: #fbbf24;
   color: #222;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border 0.2s;
+  min-width: 28px;
+  min-height: 18px;
 }
 .dashboard-carousel-answer-btn.yes {
   background: #22c55e;
@@ -189,8 +197,27 @@
   color: #fff;
   border-color: #ef4444;
 }
-.dashboard-carousel-answer-btn:active {
+.dashboard-carousel-answer-btn.active {
   filter: brightness(0.95);
+  outline: none;
+}
+.dashboard-carousel-submit-btn {
+  padding: 12px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  background: #fb923c;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(251, 146, 60, 0.10);
+  transition: background 0.2s, transform 0.1s;
+  display: inline-block;
+  max-width: 320px;
+}
+.dashboard-carousel-submit-btn:active {
+  background: #f59e42;
+  transform: scale(0.98);
 }
 
 .dashboard-carousel-checkbox-container {
@@ -245,4 +272,135 @@
 
 .dashboard-carousel-checkbox-text {
   user-select: none;
+}
+
+.dashboard-flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  gap: 32px;
+  flex-wrap: nowrap;
+}
+
+.dashboard-day-dropdown-btn {
+  width: 100%;
+  background-color: white;
+  color: rgb(108, 108, 108);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+
+.dashboard-day-dropdown-btn:hover {
+  background-color: rgb(238, 238, 238);
+  outline: none;
+  border: none;
+}
+
+.dashboard-day-dropdown-btn:focus {
+  outline: none;
+  border: none;
+}
+
+.dashboard-day-dropdowns {
+  min-width: 220px;
+  max-width: 260px;
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+  padding: 0.7rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  max-height: 540px;
+}
+
+.dashboard-day-dropdown-showmore {
+  width: 100%;
+  background: #fbbf24;
+  color: #222;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dashboard-day-dropdown-showmore:hover {
+  background: #f59e42;
+}
+
+.dashboard-day-dropdown-separator {
+  border: none;
+  border-top: 1.5px solid #e5e7eb;
+  margin: 1px 0 1px 0;
+}
+.dashboard-day-dropdown {
+  margin-bottom: 1px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-flex-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .dashboard-day-dropdowns {
+    margin-top: 0;
+    margin-bottom: 24px;
+    width: 95vw;
+    max-width: 100vw;
+  }
+}
+
+.site-footer {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  background: linear-gradient(to right, #fb923c, #ffae57, #fb923c);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.10);
+  padding: 0;
+}
+
+.site-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  padding: 0.6rem 0 0.5rem 0;
+  gap: 0.2rem;
+}
+
+.site-footer-year {
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+@media (max-width: 600px) {
+  .site-footer-content {
+    padding: 0.4rem 0 0.3rem 0;
+    font-size: 0.95rem;
+  }
+  .site-footer-year {
+    font-size: 0.92rem;
+  }
 } 
