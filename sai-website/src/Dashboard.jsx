@@ -14,7 +14,8 @@ import {
 import { GoogleGenAI } from "@google/genai";
 
 // WARNING: Never expose your real API key in production!
-const ai = new GoogleGenAI({ apiKey: 'AIzaSyDnbq9t3D75pW8Pq1DNL7FaVMA2ag7yb_c' });
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+const ai = new GoogleGenAI({ apiKey });
 
 async function getGeminiResponse(prompt) {
   const response = await ai.models.generateContent({

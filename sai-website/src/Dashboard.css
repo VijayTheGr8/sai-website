@@ -238,10 +238,13 @@
   background: #fb923c;
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 2px 8px 0 rgba(251, 146, 60, 0.10);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.308);
   transition: background 0.2s, transform 0.1s;
   display: inline-block;
   max-width: 320px;
+}
+.dashboard-carousel-submit-btn:hover {
+  background: #fe982a;
 }
 .dashboard-carousel-submit-btn:active {
   background: #f59e42;
@@ -874,6 +877,213 @@
 @media (max-width: 600px) {
   .dashboard-atf-modal {
     min-width: 0;
-    padding: 16px 4vw 16px 4vw;
+    max-width: 98vw;
+    padding: 16px 2vw 16px 2vw;
+    border-radius: 14px;
+  }
+  .dashboard-atf-modal-title {
+    font-size: 1.05rem;
+  }
+  .dashboard-atf-modal-desc {
+    font-size: 0.98rem;
+  }
+  .dashboard-atf-modal-input {
+    font-size: 0.98rem;
+    padding: 9px 8px;
+  }
+  .dashboard-atf-modal-footer {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .dashboard-atf-modal-airesponse {
+    font-size: 0.98rem;
+    padding: 12px 8px;
+  }
+  .dashboard-areas-card {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 16px 2vw 14px 2vw;
+    border-radius: 12px;
+  }
+  .dashboard-carousel {
+    max-width: 98vw;
+    padding: 1.2rem 2vw;
+    border-radius: 12px;
+  }
+  .dashboard-day-dropdowns {
+    max-width: 98vw;
+    padding: 0.5rem 0.5vw;
+    border-radius: 12px;
+  }
+  .dashboard-carousel-question-border {
+    padding: 18px 2vw;
+    min-height: 60px;
+  }
+  .dashboard-carousel-answer-btn {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    min-width: 60px;
+  }
+  .dashboard-carousel-submit-btn {
+    font-size: 1rem;
+    padding: 10px 18px;
+    max-width: 98vw;
+  }
+  .dashboard-areas-title {
+    font-size: 1.05rem;
+  }
+  .dashboard-areas-item {
+    font-size: 0.98rem;
+    padding: 8px 8px;
+  }
+  .dashboard-areas-graph-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+  .dashboard-graph-modal {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 12px 2vw 12px 2vw;
+    border-radius: 14px;
+  }
+  .dashboard-graph-modal-title {
+    font-size: 1.05rem;
+  }
+  .dashboard-graph-bar-chart-modern {
+    height: 180px;
+  }
+  .dashboard-graph-bar-container {
+    min-height: 100px;
+  }
+  .dashboard-graph-bar-label {
+    font-size: 0.92rem;
+  }
+  .dashboard-day-dropdown-btn {
+    font-size: 1rem;
+    padding: 6px 8px;
+  }
+  .dashboard-day-dropdown-content ul {
+    font-size: 0.98rem;
+  }
+  .dashboard-day-dropdown-showmore {
+    font-size: 0.98rem;
+    padding: 6px 0;
+  }
+  .site-footer-content {
+    font-size: 0.92rem;
+    padding: 0.3rem 0 0.2rem 0;
+  }
+  .site-footer-year {
+    font-size: 0.9rem;
+  }
+} 
+
+@media (max-width: 600px) {
+  .dashboard-flex-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100vw;
+    margin: 0 auto;
+  }
+  .dashboard-atf-modal,
+  .dashboard-areas-card,
+  .dashboard-carousel,
+  .dashboard-day-dropdowns,
+  .dashboard-graph-modal {
+    max-width: 96vw;
+    min-width: 0;
+    margin: 0 auto 18px auto;
+    border-radius: 14px;
+    padding: 18px 12px;
+    box-sizing: border-box;
+  }
+  .dashboard-atf-modal-title,
+  .dashboard-areas-title,
+  .dashboard-graph-modal-title {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .dashboard-atf-modal-desc,
+  .dashboard-atf-modal-airesponse,
+  .dashboard-areas-item,
+  .dashboard-carousel-question,
+  .dashboard-day-dropdown-content ul,
+  .dashboard-graph-bar-label {
+    font-size: 1.02rem;
+    margin-bottom: 10px;
+  }
+  .dashboard-areas-title,
+  .dashboard-graph-modal-title {
+    font-size: 1.08rem;
+    margin-bottom: 10px;
+  }
+  .dashboard-atf-modal-input,
+  .dashboard-atf-modal-footer button,
+  .dashboard-carousel-submit-btn,
+  .dashboard-carousel-answer-btn,
+  .dashboard-areas-graph-btn {
+    width: 100%;
+    min-height: 46px;
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    margin-bottom: 14px;
+  }
+  .dashboard-atf-modal-footer {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+    margin-bottom: 10px;
+  }
+  .dashboard-carousel-question-border {
+    padding: 14px 4vw;
+    min-height: 54px;
+    margin-bottom: 14px;
+  }
+  .dashboard-areas-list {
+    max-height: 180px;
+    padding-right: 0;
+    margin-bottom: 12px;
+  }
+  .dashboard-areas-item {
+    padding: 12px 10px;
+    margin: 0 0 10px 0;
+    font-size: 1.02rem;
+  }
+  .dashboard-areas-graph-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+  .dashboard-graph-bar-chart-modern {
+    height: 140px;
+  }
+  .dashboard-graph-bar-container {
+    min-height: 80px;
+  }
+  .dashboard-day-dropdown-btn {
+    font-size: 1.05rem;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+  }
+  .dashboard-day-dropdown-showmore {
+    font-size: 1.02rem;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+  .site-footer-content {
+    font-size: 1rem;
+    padding: 0.4rem 0 0.3rem 0;
+  }
+  .site-footer-year {
+    font-size: 1rem;
+  }
+  html, body {
+    overflow-x: hidden;
   }
 } 
